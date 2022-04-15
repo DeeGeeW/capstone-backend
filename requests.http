@@ -1,0 +1,58 @@
+### Users Index
+GET http://localhost:3000/users.json
+
+### Users Create
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+"email": "Test email",
+"password_digest": "test password",
+"username": "test username"
+}
+
+### Users Show
+GET http://localhost:3000/users/1.json
+
+### Users Update
+PATCH http://localhost:3000/users/4.json
+Content-Type: application/json
+
+{
+"email": "Update email",
+"password_digest": "password",
+"username": "Update Username"
+}
+
+### users Destroy
+DELETE http://localhost:3000/users/5.json
+
+
+### locations Index
+GET http://localhost:3000/locations.json
+
+### locations Create
+POST http://localhost:3000/locations.json
+Content-Type: application/json
+
+{
+"state": "Test state",
+"state_bird": "test password",
+"location_comments": "test location_comments"
+}
+
+### locations Show
+GET http://localhost:3000/locations/1.json
+
+### locations Update
+PATCH http://localhost:3000/locations/52.json
+Content-Type: application/json
+
+{
+"state": "Update state",
+"state_bird": "password",
+"location_comments": "Update location_comments"
+}
+
+### locations Destroy
+DELETE http://localhost:3000/locations/52.json
