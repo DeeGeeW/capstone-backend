@@ -55,4 +55,41 @@ Content-Type: application/json
 }
 
 ### locations Destroy
-DELETE http://localhost:3000/locations/52.json
+DELETE http://localhost:3000/locations/102.json
+
+
+### birds Index
+GET http://localhost:3000/birds.json
+
+### birds Create
+POST http://localhost:3000/birds.json
+Content-Type: application/json
+
+{
+"c_name": "Test",
+"s_name": "test",
+"image_url": "test",
+"post_count": 0,
+"description": "",
+"background_url": ""
+}
+
+### birds Show
+GET http://localhost:3000/birds/1.json
+
+### birds Update
+PATCH http://localhost:3000/birds/4.json
+Content-Type: application/json
+
+{
+"c_name": "test",
+"s_name": "test",
+"image_url": "test",
+"post_count": 0,
+"description": "",
+"background_url": ""
+}
+
+### birds Destroy
+DELETE http://localhost:3000/birds/5.json
+
