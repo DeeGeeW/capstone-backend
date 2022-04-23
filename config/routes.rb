@@ -7,20 +7,22 @@ Rails.application.routes.draw do
     patch "/users/:id" => "users#update"
     delete "/users/:id" => "users#destroy"
 
-
-
     get "/locations" => "locations#index"
     post "/locations" => "locations#create"
     get "/locations/:id" => "locations#show"
     patch "/locations/:id" => "locations#update"
     delete "/locations/:id" => "locations#destroy"
 
-
-
     get "/birds" => "birds#index"
     post "/birds" => "birds#create"
     get "/birds/:id" => "birds#show"
-    patch "/birds/:id" => "bird#update"
-    delete "/birds/:id" => "bird#destroy"
+    patch "/birds/:id" => "birds#update"
+    delete "/birds/:id" => "birds#destroy"
+
+    get "/comments" => "comments#index"
+    post "/comments" => "comments#create"
+    get "/comments/:id" => "comments#show"
+    patch "/comments/:id" => "comments#update"
+    delete "/comments/:id" => "comments#destroy"
  
 end

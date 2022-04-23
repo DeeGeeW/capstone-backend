@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_21_175605) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_23_192026) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_21_175605) do
     t.integer "post_count"
     t.string "description"
     t.string "background_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "bird_id"
+    t.integer "location_id"
+    t.integer "user_id"
+    t.string "comment_text"
+    t.decimal "lat", precision: 8, scale: 5
+    t.decimal "long", precision: 8, scale: 5
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -93,3 +93,39 @@ Content-Type: application/json
 ### birds Destroy
 DELETE http://localhost:3000/birds/5.json
 
+
+### Comments Index
+GET http://localhost:3000/comments.json
+
+### Comments Create
+POST http://localhost:3000/comments.json
+Content-Type: application/json
+
+{
+"bird_id": 32,
+"location_id": 42,
+"user_id": 1,
+"comment_text": "Saw a Bald eagle getting swarmed by ospreys mid river in april 2022, the coordinates are to a bluff at melton hill park in hardin valley, east TN",
+"lat": 35.94680,
+"long": -84.23727
+}
+
+### Comments Show
+GET http://localhost:3000/comments/1.json
+
+### Comments Update
+PATCH http://localhost:3000/comments/4.json
+Content-Type: application/json
+
+{
+"bird_id": "test",
+"location_id": "test",
+"user_id": "test",
+"comment_text": 0,
+"lat": "",
+"long": ""
+}
+
+### comments Destroy
+DELETE http://localhost:3000/comments/3.json
+
