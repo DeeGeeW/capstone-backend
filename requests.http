@@ -42,7 +42,7 @@ Content-Type: application/json
 }
 
 ### locations Show
-GET http://localhost:3000/locations/.json
+GET http://localhost:3000/locations/42.json
 
 ### locations Update
 PATCH http://localhost:3000/locations/52.json

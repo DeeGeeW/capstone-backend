@@ -16,7 +16,7 @@ class LocationsController < ApplicationController
 
   def show
     location = Location.find_by(id: params[:id])
-    render json: location.as_json
+    render json: location
   end
 
   def update
@@ -25,7 +25,7 @@ class LocationsController < ApplicationController
     location.state_bird = params[:state_bird] || location.state_bird
     location.location_comments = params[:location_comments] || location.location_comments
     location.save
-    render json: location.as_json
+    render json: location
   end
 
   def destroy
