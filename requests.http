@@ -6,9 +6,10 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-"email": "Test email",
-"password_digest": "test password",
-"username": "test username"
+"email": "southside@test.com",
+"username": "ljsouth",
+"password": "password",
+"password_confirmation": "password"
 }
 
 ### Users Show
@@ -121,7 +122,7 @@ Content-Type: application/json
 "bird_id": 32,
 "location_id": 42,
 "user_id": 1,
-"comment_text": "Saw a Bald eagle getting swarmed by ospreys mid river in april 2022, the coordinates are to a bluff at melton hill park in hardin valley, east TN",
+"comment_text": "teste Saw a Bald eagle getting swarmed by ospreys mid river in april 2022, the coordinates are to a bluff at melton hill park in hardin valley, east TN",
 "lat": 35.94680,
 "long": -84.23727
 }
@@ -129,3 +130,11 @@ Content-Type: application/json
 ### comments Destroy
 DELETE http://localhost:3000/comments/6.json
 
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "southside@test.com",
+  "password": "password"
+}
