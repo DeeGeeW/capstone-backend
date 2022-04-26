@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def index
     comments = Comment.all
-    render json: comments.as_json
+    render json: comments
   end
 
   def create
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
 
   def show
     comment = Comment.find_by(id: params[:id])
-    render json: comment.as_json
+    render json: comment
   end
 
   def update

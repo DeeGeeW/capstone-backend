@@ -117,5 +117,14 @@ Location.create!([
   {state: "WV", state_bird: "Northern Cardinal", location_comments: ""},
   {state: "WI", state_bird: "American Robin", location_comments: ""},
   {state: "WY", state_bird: "Western Meadowlark", location_comments: ""},
-  
+])
+
+Comment.create!([
+  {bird_id: 32, location_id: 42, user_id: 2, comment_text: "Saw a Bald eagle getting swarmed by ospreys mid river in april 2022, the coordinates are to a bluff at melton hill park in hardin valley, east TN", lat: 35.9468, long: -84.23727},
+  {bird_id: 37, location_id: 42, user_id: 2, comment_text: "These birds always have a fish in their beak! Check out Melton lake.. Huge paved route in oak ridge on the river!", lat: 36.02006, long: -84.16711},
+  {bird_id: 14, location_id: 18, user_id: 2, comment_text: "Queen Bess Island... nuff said",lat: 29.30545, long: -89.95777}
+  # {bird_id: , location_id: , user_id: , comment_text: "",lat: , long:}, 
+  # {bird_id: , location_id: , user_id: , comment_text: "",lat: , long:}, 
+  # {bird_id: , location_id: , user_id: , comment_text: "",lat: , long:}, 
+
 ])
