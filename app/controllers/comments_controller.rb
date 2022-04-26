@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
       comment = Comment.new(
       bird_id: params[:bird_id],
       location_id: params[:location_id],
-      user_id: params[:user_id],
+      user_id: current_user.id,
       comment_text: params[:comment_text],
       lat: params[:lat],
       long: params[:long]
