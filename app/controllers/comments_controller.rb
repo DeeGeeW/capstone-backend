@@ -5,7 +5,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-    comment = Comment.new(
+    if current_user
+      comment = Comment.new(
       bird_id: params[:bird_id],
       location_id: params[:location_id],
       user_id: params[:user_id],
@@ -15,6 +16,9 @@ class CommentsController < ApplicationController
     )
     comment.save
     render json: comment.as_json
+    else
+      render json: {message: "Need to log in to add comment."}
+    end
   end
 
   def show

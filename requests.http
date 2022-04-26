@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE2NTEwOTc1MDh9.TSuZ0Y6icH1IJWjLaAqvShMEDtD1eVOUhf5HPzFqQmg
+
 ### Users Index
 GET http://localhost:3000/users.json
 
@@ -13,7 +15,7 @@ Content-Type: application/json
 }
 
 ### Users Show
-GET http://localhost:3000/users/1.json
+GET http://localhost:3000/users/2.json
 
 ### Users Update
 PATCH http://localhost:3000/users/4.json
@@ -100,12 +102,13 @@ GET http://localhost:3000/comments.json
 
 ### Comments Create
 POST http://localhost:3000/comments.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
 "bird_id": 32,
 "location_id": 42,
-"user_id": 1,
+"user_id": 5,
 "comment_text": "Saw a Bald eagle getting swarmed by ospreys mid river in april 2022, the coordinates are to a bluff at melton hill park in hardin valley, east TN",
 "lat": 35.94680,
 "long": -84.23727
