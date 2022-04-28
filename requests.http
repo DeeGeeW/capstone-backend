@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE2NTEwOTc1MDh9.TSuZ0Y6icH1IJWjLaAqvShMEDtD1eVOUhf5HPzFqQmg
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJleHAiOjE2NTExNjYxODF9.qhKfLC1dX6LiEsqNUtcRRSsFSE_6LqhM9356uzyh4_g
 
 ### Users Index
 GET http://localhost:3000/users.json
@@ -8,8 +8,8 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-"email": "Northside@test.com",
-"username": "RJnorth",
+"email": "DallasDork",
+"username": "ImMad@test.com",
 "password": "password",
 "password_confirmation": "password"
 }
@@ -28,7 +28,7 @@ Content-Type: application/json
 }
 
 ### users Destroy
-DELETE http://localhost:3000/users/5.json
+DELETE http://localhost:3000/users/3.json
 
 
 ### locations Index
@@ -107,10 +107,10 @@ Content-Type: application/json
 
 {
 "bird_id": 32,
-"location_id": 42,
-"comment_text": "Saw a Bald eagle getting swarmed by ospreys mid river in april 2022, the coordinates are to a bluff at melton hill park in hardin valley, east TN",
-"lat": 35.94680,
-"long": -84.23727
+"location_id": 74,
+"comment_text": "Stests adsvggaerfb",
+"lat": 43,
+"long": 56
 }
 
 ### Comments Show
@@ -118,7 +118,9 @@ GET http://localhost:3000/comments/1.json
 
 ### Comments Update
 PATCH http://localhost:3000/comments/4.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
+
 
 {
 "bird_id": 32,
@@ -131,12 +133,13 @@ Content-Type: application/json
 
 ### comments Destroy
 DELETE http://localhost:3000/comments/12.json
+Authorization: Bearer {{jwt}}
 
 ### Sessions create (login)
 POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "southside@test.com",
+  "email": "Chicagocubsfan@test.com",
   "password": "password"
 }
