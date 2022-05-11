@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJleHAiOjE2NTExNjYxODF9.qhKfLC1dX6LiEsqNUtcRRSsFSE_6LqhM9356uzyh4_g
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJleHAiOjE2NTIzMTIxNjJ9.F4uSsQYaacGjxGHc40Esi08v6JPBl51-7IEpRB9jwwY
 
 ### Users Index
 GET http://localhost:3000/users.json
@@ -45,20 +45,20 @@ Content-Type: application/json
 }
 
 ### locations Show
-GET http://localhost:3000/locations/42.json
+GET http://localhost:3000/locations/1.json
 
 ### locations Update
-PATCH http://localhost:3000/locations/52.json
+PATCH http://localhost:3000/locations/50.json
 Content-Type: application/json
 
 {
-"state": "Update state",
-"state_bird": "password",
-"location_comments": "Update location_comments"
+"state": "WY",
+"state_bird": "Western Meadowlark",
+"location_comments": "https://statesymbolsusa.org/sites/statesymbolsusa.org/files/primary-images/FlagWyomingstateFlag.jpg"
 }
 
 ### locations Destroy
-DELETE http://localhost:3000/locations/102.json
+DELETE http://localhost:3000/locations/53.json
 
 
 ### birds Index
@@ -81,20 +81,20 @@ Content-Type: application/json
 GET http://localhost:3000/birds/32.json
 
 ### birds Update
-PATCH http://localhost:3000/birds/4.json
+PATCH http://localhost:3000/birds/50.json
 Content-Type: application/json
 
 {
-"c_name": "test",
-"s_name": "test",
-"image_url": "test",
+"c_name": "Yellow-crowned Night-Heron",
+"s_name": "Nyctanassa violacea",
+"image_url": "https://bloximages.newyork1.vip.townnews.com/bayjournal.com/content/tncms/assets/v3/editorial/b/c8/bc87fe35-2a3d-5434-bbbe-abb19acf9760/5db1dd5c3bc74.image.jpg?resize=392%2C600",
 "post_count": 0,
-"description": "",
-"background_url": ""
+"description": "More solitary and often more secretive than the Black-crowned Night-Heron, the Yellow-crowned is still quite common in parts of the southeast. Particularly in coastal regions, often feeds by day as well as by night. Its stout bill seems to be an adaptation for feeding on hard-shelled crustaceans -- it is called 'crab-eater' in some locales. The species was introduced into Bermuda in a successful attempt to bring land crabs under control there.",
+"background_url": "https://www.birdorable.com/img/bird/m/black-crowned-night-heron.png"
 }
 
 ### birds Destroy
-DELETE http://localhost:3000/birds/5.json
+DELETE http://localhost:3000/birds/60.json
 
 
 ### Comments Index
@@ -106,11 +106,11 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-"bird_id": 32,
-"location_id": 74,
-"comment_text": "Stests adsvggaerfb",
-"lat": 43,
-"long": 56
+"bird_id": 13,
+"location_id": 13,
+"comment_text": "Test Comment",
+"lat": 41.93837,
+"long": -82.66432
 }
 
 ### Comments Show
@@ -143,3 +143,28 @@ Content-Type: application/json
   "email": "Chicagocubsfan@test.com",
   "password": "password"
 }
+
+### Requests Index
+GET http://localhost:3000/requests.json
+
+### Requests Create
+POST http://localhost:3000/requests.json
+Content-Type: application/json
+
+{
+"new_bird": "Velociraptor"
+}
+
+### requests Show
+GET http://localhost:3000/requests/1.json
+
+### requests Update
+PATCH http://localhost:3000/requests/50.json
+Content-Type: application/json
+
+{
+"new_bird": "WY",
+}
+
+### requests Destroy
+DELETE http://localhost:3000/locations/53.json

@@ -25,6 +25,12 @@ Rails.application.routes.draw do
     patch "/comments/:id" => "comments#update"
     delete "/comments/:id" => "comments#destroy"
 
+    get "/requests" => "requests#index"
+    post "/requests" => "requests#create"
+    get "/requests/:id" => "requests#show"
+    patch "/requests/:id" => "requests#update"
+    delete "/requests/:id" => "requests#destroy"
+
     post "/sessions" => "sessions#create"
  
 end
