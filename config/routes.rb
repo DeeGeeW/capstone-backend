@@ -32,5 +32,7 @@ Rails.application.routes.draw do
     delete "/requests/:id" => "requests#destroy"
 
     post "/sessions" => "sessions#create"
+
+    get "/migs" => "migs#index"
  
 end

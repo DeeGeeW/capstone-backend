@@ -168,3 +168,8 @@ Content-Type: application/json
 
 ### requests Destroy
 DELETE http://localhost:3000/locations/53.json
+
+
+### Migrations Index
+GET http://localhost:3000/migs
+

@@ -1,0 +1,2 @@
+class Mig < ApplicationRecord
+end
