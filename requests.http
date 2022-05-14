@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJleHAiOjE2NTIzNzkxMTh9.eEh9jaHgMqf-D3Lri_GJVb3sHfGWEud3aNWZXNsCGGc
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwiZXhwIjoxNjUyNTg5Mzc3fQ.TXezpVm39eDKUwXZUNs3LN66nO7LBSWPTicPbTXeJKs
 
 ### Users Index
 GET http://localhost:3000/users.json
@@ -140,7 +140,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "Chicagocubsfan@test.com",
+  "email": "TheBigHurt@test.com",
   "password": "password"
 }
 
