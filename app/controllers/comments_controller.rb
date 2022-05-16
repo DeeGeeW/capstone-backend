@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    if current_user
+    if current_user && 
       comment = Comment.new(
       bird_id: params[:bird_id],
       location_id: params[:location_id],

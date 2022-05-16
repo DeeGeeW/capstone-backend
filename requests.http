@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwiZXhwIjoxNjUyNTg5Mzc3fQ.TXezpVm39eDKUwXZUNs3LN66nO7LBSWPTicPbTXeJKs
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwiZXhwIjoxNjUyODE0NjA0fQ.ojSXMVR3SEt1MkdMedxyBYWx12CQ7Plom2Upc-dev3U
 
 ### Users Index
 GET http://localhost:3000/users.json
@@ -81,16 +81,16 @@ Content-Type: application/json
 GET http://localhost:3000/birds/32.json
 
 ### birds Update
-PATCH http://localhost:3000/birds/50.json
+PATCH http://localhost:3000/birds/7.json
 Content-Type: application/json
 
 {
-"c_name": "Yellow-crowned Night-Heron",
-"s_name": "Nyctanassa violacea",
-"image_url": "https://bloximages.newyork1.vip.townnews.com/bayjournal.com/content/tncms/assets/v3/editorial/b/c8/bc87fe35-2a3d-5434-bbbe-abb19acf9760/5db1dd5c3bc74.image.jpg?resize=392%2C600",
+"c_name": "American Robin",
+"s_name": "Turdus migratorius",
+"image_url": "https://www.allaboutbirds.org/guide/assets/photo/303441781-480px.jpg",
 "post_count": 0,
-"description": "More solitary and often more secretive than the Black-crowned Night-Heron, the Yellow-crowned is still quite common in parts of the southeast. Particularly in coastal regions, often feeds by day as well as by night. Its stout bill seems to be an adaptation for feeding on hard-shelled crustaceans -- it is called 'crab-eater' in some locales. The species was introduced into Bermuda in a successful attempt to bring land crabs under control there.",
-"background_url": "https://www.birdorable.com/img/bird/m/black-crowned-night-heron.png"
+"description": "A very familiar bird over most of North America, running and hopping on lawns with upright stance, often nesting on porches and windowsills. The Robin's rich caroling is among the earliest bird songs heard at dawn in spring and summer, often beginning just before first light. In fall and winter, robins may gather by the hundreds in roaming flocks, concentrating at sources of food.",
+"background_url": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/rockcms/2021-08/210810-robin-dc-comics-ac-420p-631a32.jpg"
 }
 
 ### birds Destroy

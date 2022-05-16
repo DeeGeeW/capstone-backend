@@ -5,11 +5,15 @@ class RequestsController < ApplicationController
   end
 
   def create
-    request = Request.new(
-      new_bird: params[:new_bird]
-    )
+    if current_user 
+      request = Request.new(
+        new_bird: params[:new_bird]
+      )
     request.save
     render json: request.as_json
+  else
+    render json: {message: "Need to log in to add request."}
+  end
   end
 
   def show
