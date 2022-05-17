@@ -9,11 +9,11 @@ class RequestsController < ApplicationController
       request = Request.new(
         new_bird: params[:new_bird]
       )
-    request.save
-    render json: request.as_json
-  else
-    render json: {message: "Need to log in to add request."}
-  end
+      request.save
+      render json: request.as_json
+    else
+      render json: {message: "Need to log in to add request."}
+    end
   end
 
   def show
@@ -29,8 +29,12 @@ class RequestsController < ApplicationController
   end
 
   def destroy
-    request = Request.find_by(id: params[:id])
-    request.destroy
-    render json: {message: "request successfully destroyed."}
+    if current_user && current_user.is_mod == true
+      request = Request.find_by(id: params[:id])
+      request.destroy
+      render json: {message: "request successfully destroyed."}
+    else
+      render json: {message: "Need to log in to add request."}
+    end
   end
 end

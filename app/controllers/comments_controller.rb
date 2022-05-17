@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    if current_user && 
+    if current_user 
       comment = Comment.new(
       bird_id: params[:bird_id],
       location_id: params[:location_id],
@@ -40,8 +40,12 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    comment = Comment.find_by(id: params[:id])
-    comment.destroy
-    render json: {message: "comment successfully destroyed."}
+    if current_user && current_user.is_mod == true
+      comment = Comment.find_by(id: params[:id])
+      comment.destroy
+      render json: {message: "comment successfully destroyed."}
+    else
+      render json: {message: "Need to log in to destroy comment."}
+    end
   end
 end
