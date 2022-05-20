@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    if current_user 
+    if current_user && params[:long][0] == "-" 
       comment = Comment.new(
       bird_id: params[:bird_id],
       location_id: params[:location_id],
@@ -16,8 +16,20 @@ class CommentsController < ApplicationController
     )
     comment.save
     render json: comment.as_json
+    elsif current_user && params[:long][0] != "-"
+          comment = Comment.new(
+          bird_id: params[:bird_id],
+          location_id: params[:location_id],
+          user_id: current_user.id,
+          comment_text: params[:comment_text],
+          lat: params[:lat],
+          long: "-" + params[:long]
+        )
+        comment.save
+        render json: comment.as_json
+        # render json: {message: "Need to add - to your longitude."}
     else
-      render json: {message: "Need to log in to add comment."}
+      render json: {message: "Please log in."}
     end
   end
 
