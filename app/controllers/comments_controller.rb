@@ -5,31 +5,30 @@ class CommentsController < ApplicationController
   end
 
   def create
-    if current_user && params[:long][0] == "-" 
+    if current_user && params[:long][0] == "-"
       comment = Comment.new(
-      bird_id: params[:bird_id],
-      location_id: params[:location_id],
-      user_id: current_user.id,
-      comment_text: params[:comment_text],
-      lat: params[:lat],
-      long: params[:long]
-    )
-    comment.save
-    render json: comment.as_json
+        bird_id: params[:bird_id],
+        location_id: params[:location_id],
+        user_id: current_user.id,
+        comment_text: params[:comment_text],
+        lat: params[:lat],
+        long: params[:long],
+      )
+      comment.save
+      render json: comment.as_json
     elsif current_user && params[:long][0] != "-"
-          comment = Comment.new(
-          bird_id: params[:bird_id],
-          location_id: params[:location_id],
-          user_id: current_user.id,
-          comment_text: params[:comment_text],
-          lat: params[:lat],
-          long: "-" + params[:long]
-        )
-        comment.save
-        render json: comment.as_json
-        # render json: {message: "Need to add - to your longitude."}
+      comment = Comment.new(
+        bird_id: params[:bird_id],
+        location_id: params[:location_id],
+        user_id: current_user.id,
+        comment_text: params[:comment_text],
+        lat: params[:lat],
+        long: "-" + params[:long],
+      )
+      comment.save
+      render json: comment.as_json
     else
-      render json: {message: "Please log in."}
+      render json: { message: "Please log in." }
     end
   end
 
@@ -55,9 +54,9 @@ class CommentsController < ApplicationController
     if current_user && current_user.is_mod == true
       comment = Comment.find_by(id: params[:id])
       comment.destroy
-      render json: {message: "comment successfully destroyed."}
+      render json: { message: "comment successfully destroyed." }
     else
-      render json: {message: "Need to log in to destroy comment."}
+      render json: { message: "Need to log in to destroy comment." }
     end
   end
 end
