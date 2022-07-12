@@ -9,10 +9,10 @@ class UsersController < ApplicationController
       email: params[:email],
       username: params[:username],
       password: params[:password],
-      password_confirmation: params[:password_confirmation]
+      password_confirmation: params[:password_confirmation],
     )
     if user.save
-    render json: { message: "User created succesfully" }, status: :created
+      render json: { message: "User created succesfully" }, status: :created
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
@@ -35,6 +35,6 @@ class UsersController < ApplicationController
   def destroy
     user = User.find_by(id: params[:id])
     user.destroy
-    render json: {message: "user successfully destroyed."}
+    render json: { message: "user successfully destroyed." }
   end
 end
